@@ -10,7 +10,6 @@
 bst_t *bst_insert(bst_t **tree, int value)
 {
 bst_t *new_node, *current;
-
 if (tree == NULL)
 {
 return (NULL);

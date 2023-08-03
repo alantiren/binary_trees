@@ -19,8 +19,8 @@ for (i = 0; i < size; i++)
 {
 if (heap_insert(&root, array[i]) == NULL)
 {
-return (NULL)
-};
+return (NULL);
+}
 }
 return (root);
 }

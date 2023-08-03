@@ -17,7 +17,7 @@ if (tree->left && tree->right)
 a = 1 + tree_is_perfect(tree->left);
 b = 1 + tree_is_perfect(tree->right);
 if (b == a && b != 0 && a != 0)
-return (r);
+return (b);
 return (0);
 }
 else if (!tree->left && !tree->right)

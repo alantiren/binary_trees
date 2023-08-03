@@ -17,10 +17,10 @@ return;
 else
 {
 if (tree != NULL)
-		{
-			binary_tree_delete(tree->left);
-			binary_tree_delete(tree->right);
-		}
+{
+binary_tree_delete(tree->left);
+binary_tree_delete(tree->right);
+}
 free(tree);
 }
 }

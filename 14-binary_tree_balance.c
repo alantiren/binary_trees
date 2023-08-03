@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "binary_trees.h"
 
 /**
@@ -7,15 +6,24 @@
  *
  * Return: Height of the binary tree, 0 if tree is NULL.
  */
-size_t binary_tree_height(const binary_tree_t *tree)
+size_t binary_tree_height_b(const binary_tree_t *tree)
 {
-if (tree == NULL)
-{
-return (0);
-}
-size_t left_height = binary_tree_height(tree->left);
-size_t right_height = binary_tree_height(tree->right);
-return (1 + (left_height > right_height ? left_height : right_height));
+	size_t a = 0;
+	size_t b = 0;
+
+	if (tree == NULL)
+	{
+		return (0);
+	}
+	else
+	{
+		if (tree)
+		{
+			a = tree->left ? 1 + binary_tree_height_b(tree->left) : 1;
+			b = tree->right ? 1 + binary_tree_height_b(tree->right) : 1;
+		}
+		return ((a > b) ? a : b);
+	}
 }
 
 /**
@@ -26,11 +34,13 @@ return (1 + (left_height > right_height ? left_height : right_height));
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-if (tree == NULL)
-{
-return (0);
-}
-int left_height = binary_tree_height(tree->left);
-int right_height = binary_tree_height(tree->right);
-return (left_height - right_height);
+	int right = 0, left = 0, total = 0;
+
+	if (tree)
+	{
+		left = ((int)binary_tree_height_b(tree->left));
+		right = ((int)binary_tree_height_b(tree->right));
+		total = left - right;
+	}
+	return (total);
 }

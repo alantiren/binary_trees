@@ -68,8 +68,8 @@ return (1);
 }
 if (tree->n > tree->parent->n)
 {
-return (0)
-};
+return (0);
+}
 return (check_parent(tree->left) && check_parent(tree->right));
 }
 

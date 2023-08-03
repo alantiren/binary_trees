@@ -17,8 +17,8 @@ return (0);
 }
 else
 {
-l = binary_tree_leaves(tree->left);
-r = binary_tree_leaves(tree->right);
+a = binary_tree_leaves(tree->left);
+b = binary_tree_leaves(tree->right);
 leaf = a + b;
 return ((!a && !b) ? leaf + 1 : leaf + 0);
 }
